@@ -1,17 +1,27 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i=0; i<array.length; i++) {
+    if (array.indexOf(target-array[i], i+1) !== -1) {
+      return true
+    }
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  O(n^2)
 */
 
 /* 
-  Add your pseudocode here
+  Function takes in an array and a target
+  For loop, which iterates as long as i is less than array.length
+    Inside loop, take the current element array[i] and subtract from target
+    Call array.indexOf on the result, starting at i+1
+    If return is === 1, return true
+    Else return false
 */
 
 /*
-  Add written explanation of your solution here
+  Given an array and a target, we want to return true if any two numbers in the array add up to the target. We will return false otherwise. 
 */
 
 // You can run `node index.js` to view these console logs
